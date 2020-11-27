@@ -1,0 +1,1227 @@
+/* fonts */
+
+@font-face {
+  font-family: "raleway-regular";
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: "raleway-medium";
+  src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+  font-family: "raleway-bold";
+  src: url(../fonts/Raleway-bold.ttf);
+}
+
+@font-face {
+  font-family: "raleway-semi-bold";
+  src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "raleway-black";
+  src: url(../fonts/Raleway-Black.ttf);
+}
+
+@font-face {
+  font-family: "raleway-extrabold";
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+/* ********************* COLORS VAR ******************** */
+
+:root {
+  --primary: #eebf00;
+  --secondary: #232b38;
+  --ternary: #6c6c6c;
+  --danger: #fe4545;
+  --pure: #fefefe;
+  --light: #f0f0f0;
+  --heaven: #ffffff;
+  --footer: #2d333f;
+}
+
+/* %%%%%%%%%% utility class %%%%%%%%%%% */
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-pure {
+  color: var(--pure);
+}
+
+/* ################################## utility for shadow ###############################*/
+
+.magic-shadow {
+  position: relative;
+  background-color: white;
+}
+
+.magic-shadow::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 69px;
+  position: absolute;
+  background-image: url(../ic/shadow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  bottom: -20px;
+}
+
+
+.magic-shadow-sm {
+  position: relative;
+  background-color: white;
+}
+
+
+.magic-shadow-sm::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 69px;
+  position: absolute;
+  background-image: url(../ic/shadow_sm.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  bottom: -20px;
+}
+
+/* ###################### button utility ####################### */
+
+.btn {
+  padding: 0.75rem 0.75rem;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  line-height: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 0.8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--heaven);
+}
+
+.btn-primary:hover {
+  color: var(--primary);
+  background: var(--heaven);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--heaven);
+}
+
+.btn-secondary:hover {
+  color: var(--secondary);
+  background: var(--heaven);
+  border: 2px solid var(--secondary);
+}
+
+
+/* ********************* Section heading utility********************** */
+
+.section-heading {
+  font-family: "raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4.5rem;
+  font-size: 1.9rem;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30px;
+  background: url(../ic/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: -10px;
+
+}
+
+/* ############ body css ######### */
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  MAIN WRAPPER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 968px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 952px;
+  }
+}
+
+.main-wrappper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav-background {
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.nav-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 15px;
+  display: none;
+
+}
+
+.site-content-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--heaven);
+  z-index: 2;
+  transition: all .3s ease;
+}
+
+.site-content-wrapper.scaled {
+  transform: scale(0.9) translateX(90%);
+  border-radius: 3px;
+  box-shadow: 0 3px 10px 0 var(--secondary);
+}
+
+.site-content {
+  width: 100%;
+  height: 100%;
+  /* overflow-x:auto;  */
+}
+
+
+
+
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 4000px;
+  font-family: "raleway-regular";
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+
+/*2222222222222222222222222222  topbar css 2222222222222222222222222222222*/
+
+header.topbar {
+  background-color: black;
+  color: white;
+  font-family: "raleway-semi-bold";
+  padding: 0.75rem 0;
+}
+
+header.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.topbar .container .icons a {
+  margin-right: 0.6rem;
+}
+
+header.topbar .auth>div a {
+  color: white;
+  text-decoration: none;
+}
+
+header.topbar .auth>div img {
+  margin-right: 0.2rem;
+}
+
+header.topbar .auth {
+  display: flex;
+}
+
+header.topbar .auth span {
+  padding: 0 1rem;
+}
+
+/* &&&&&&&&&&&&   TOPBAR  CSS END   &&&&&&&&&&& */
+
+/* $$$$$$$$$$$$$$$ NAV CSS START $$$$$$$$$$$$$$$$$ */
+
+/* ################## top ################# */
+
+nav .top {
+  padding: 1.5rem o;
+}
+
+nav .top .container .contact img {
+  margin-right: 0.3rem;
+}
+
+nav .top .container .contact h5 {
+  font-family: "raleway-black";
+}
+
+nav .top .container .time img {
+  margin-right: 0.3rem;
+}
+
+nav .top .container h5 {
+  font-family: "raleway-black";
+}
+
+nav .top .container .contact h6,
+nav .top .container .time h6 {
+  color: rgb(95, 94, 94);
+}
+
+/* ################## top end ################# */
+
+nav .navbar {
+  margin: 22px 0;
+}
+
+nav .navbar a {
+  text-decoration: none;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+nav .navbar a.active {
+  background: var(--primary);
+}
+
+nav .navbar a:hover {
+  background: var(--primary);
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^ NAVBAR END ^^^^^^^^^^^^^^^^^^ */
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$ NAV END $$$$$$$$$$$$$$$$$$$$$ */
+
+/* &&&&&&&&&&&&&&&&&&&&& background section&&&&&&&&&&&&&&&&&&&& */
+header.hero {
+  height: 490px;
+  background-image: url(../images/hero.jpg);
+  /* width: 100vw; */
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+}
+
+header.hero .container {
+  position: relative;
+}
+
+header.hero .welcome {
+  margin-bottom: 0.25rem;
+}
+
+header.hero .welcome span {
+  font-family: "raleway-bold";
+  color: var(--secondary);
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+header.hero h1 {
+  font-family: "raleway-extrabold";
+  color: var(--secondary);
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+header.hero h1 span {
+  color: var(--primary);
+}
+
+header.hero p {
+  font-family: "raleway-medium";
+  width: 50%;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+header.hero button:first-child {
+  margin-right: 0.50rem;
+}
+
+header.hero .hero-image {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+}
+
+header.hero .hero-image img {
+  width: 90%;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$ SLIDER TOP PRODUCTS$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+section {
+  padding: 4rem 0;
+}
+
+section.top-products {
+  background: var(--light);
+}
+
+section.top-products .food-slider .food-card {
+  background: var(--heaven);
+  padding: 1.5rem 0;
+  border-radius: 4px;
+}
+
+section.top-products .food-slider .food-card .product-image img {
+  width: 80%;
+  height: 200px;
+  object-fit: contain;
+  padding-bottom: 1rem;
+}
+
+hr {
+  border: 1px solid var(--light);
+  opacity: 0.8;
+  margin: 1rem 0;
+}
+
+section.top-products .food-slider .food-card h2 {
+  font-family: "raleway-bold";
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+section.top-products .food-slider .food-card .stars {
+  margin-bottom: 0.5rem;
+}
+
+section.top-products .food-slider .food-card .stars img {
+  margin-right: 0.25rem;
+}
+
+section.top-products .food-slider .food-card .price {
+  font-family: "raleway-medium";
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+section.top-products .food-slider .food-card button {
+  font-family: "raleway-medium";
+  color: var(--secondary);
+  background: var(--heaven);
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+  padding: 0;
+
+}
+
+section.top-products .food-slider .food-card button:hover {
+  background: var(--primary);
+  color: var(--heaven);
+}
+
+section.top-products .food-slider .food-card button img {
+  background: var(--primary);
+  padding: .50rem;
+  height: 32px;
+  margin-right: 1.2rem;
+}
+
+.top-products .container .slider {
+  position: relative;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SLIDER OVERRITE CSS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.slick-slide {
+  margin: 0 27px;
+}
+
+.slick-list {
+  margin: 0 -27px;
+}
+
+/* ############### SLIDER BTN ############# */
+
+.top-products .slider-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: var(--primary);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.prev-btn {
+  position: absolute;
+  top: 46%;
+  left: -2.5rem;
+  z-index: 1;
+}
+
+.next-btn {
+  position: absolute;
+  top: 46%;
+  right: -2.5rem;
+  z-index: 1;
+}
+
+
+.top-products .btn-wrapper {
+  margin-top: 2rem;
+}
+
+.slick-track {
+  padding: 1rem 0;
+}
+
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ABOUT MEAL SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+section.about-meal img {
+  width: 80%;
+}
+
+section.about-meal h2 {
+  font-family: "raleway-bold";
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  line-height: 1.3rem;
+}
+
+section.about-meal p {
+  line-height: 1.7;
+  margin-bottom: 2.8rem;
+}
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ OUR SERVICES $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+
+section.our-services {
+  background: var(--light);
+  position: relative;
+  z-index: 0;
+}
+
+section.our-services .card-wrapper {
+  margin-right: -2rem;
+  margin-top: 8rem;
+}
+
+section.our-services .service-card {
+  background: var(--heaven);
+  text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+  border-radius: 4px;
+  margin-right: 2rem;
+}
+
+section.our-services .service-card .icon {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section.our-services .service-card h2 {
+  font-family: "raleway-bold";
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+
+}
+
+section.our-services .service-card p {
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+
+}
+
+/* #################################BEST DELAS ################################## */
+
+section.big-deal {
+  background: linear-gradient(rgba(35, 43, 56, 0.9),
+      rgba(35, 43, 56, 0.9)), url(../images/food_table.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+section.big-deal .timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -2rem;
+
+}
+
+section.big-deal .timer div {
+  margin-right: 2rem;
+  background: var(--primary);
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.big-deal .timer div span:first-child {
+  font-family: "raleway-semibold";
+  font-size: 2.5rem;
+  color: var(--heaven);
+  margin-bottom: 0.05rem;
+}
+
+
+section.big-deal .timer div span:last-child {
+  font-family: "raleway-medium";
+  /* font-size: 2.5rem; */
+  color: var(--heaven);
+  /* margin-bottom: 0.05rem; */
+}
+
+/* ************************************************ */
+
+section.latest-news {
+  background: var(--light);
+  position: relative;
+  z-index: 0;
+}
+
+section.latest-news .article-wrapper {
+  margin-right: -2rem;
+}
+
+.latest-news .article-wrapper .card {
+  margin-right: 2rem;
+  background: var(--heaven);
+  border-radius: 4px;
+}
+
+.latest-news .article-wrapper .card img {
+  width: 100%;
+}
+
+.latest-news .article-wrapper .card .card-content {
+  padding: 2rem;
+}
+
+.latest-news .article-wrapper .card .card-content .post-meta {
+  margin-bottom: 1rem;
+}
+
+.latest-news .article-wrapper .card .card-content .post-meta .comment-count {
+  margin-left: 1rem;
+}
+
+.latest-news .article-wrapper .card .card-content .post-meta div span .post-by {
+  font-weight: bolder;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.latest-news .article-wrapper .card .card-content h2 {
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  line-height: 1.2rem;
+  font-style: inherit;
+}
+
+.latest-news .article-wrapper .card .card-content p {
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.latest-news .btn-wrapper {
+  margin-top: 2rem;
+  margin-bottom: -1.5rem;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SUBSCRIBE TO OUR NEWSLETTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+section.subscribe {
+  background: var(--primary);
+}
+
+section.subscribe .container>div:first-child img {
+  width: 90%;
+}
+
+section.subscribe .container>div:first-child {
+  flex: 1;
+}
+
+section.subscribe .container>div:last-child {
+  flex: 1;
+}
+
+section.subscribe h1 {
+  font-family: "raleway-bold";
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+section.subscribe p {
+  font-family: "raleway-medium";
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+  line-height: 1.5rem;
+}
+
+section.subscribe .input-wrap {
+  background: var(--heaven);
+  display: flex;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+section.subscribe .input-wrap input {
+  width: 100%;
+  border: none;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+section.subscribe .input-wrap input:focus {
+  outline: none;
+}
+
+section.subscribe .input-wrap button {
+  padding: 0.8rem 2rem;
+  border: none;
+  background: var(--primary);
+  color: var(--pure);
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .3s ease;
+  outline: none;
+
+}
+
+section.subscribe .input-wrap button:hover {
+  background: var(--secondary);
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!! CONTACT US !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+section.contact-us {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.contact-us .contact-info-wrapper {
+  padding: 4rem 0;
+  flex: 1;
+}
+
+section.contact-us .map {
+  flex: 1;
+  filter: grayscale(100%);
+}
+
+section.contact-us .contact-info {
+  display: flex;
+  justify-content: center;
+}
+
+section.contact-us .contact-info>div>div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+section.contact-us .contact-info>div>div img {
+  margin-right: 1rem;
+}
+
+section.contact-us .contact-info>div>div>div {
+  display: flex;
+  flex-direction: column;
+}
+
+section.contact-us .contact-info>div>div>div span:first-child {
+  font-family: "raleway-bold";
+  margin-bottom: 0.25rem;
+
+}
+
+section.contact-us .contact-info>div>div>div .font_small {
+  /* font-family: "raleway-bold"; */
+  /* margin-bottom: 0.25rem; */
+  font-size: 14px;
+
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ FOOTER ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+
+footer {
+  background: var(--footer);
+  padding-top: 3rem;
+  padding-bottom: 0rem;
+}
+
+footer .container {
+  color: var(--pure);
+}
+
+footer .box {
+  flex: 1;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+footer .instagram-api img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer .instagram-api .post-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .instagram-api .post-wrap>div {
+  width: calc(1/3*100% - (1-1/3)*5px);
+  margin-bottom: 5px;
+}
+
+footer .box h3 {
+  border-bottom: 1px solid var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: .8rem;
+  font-weight: bolder;
+  padding-bottom: .8rem;
+}
+
+footer .box p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 13px;
+}
+
+footer .box ul {
+  list-style-type: none;
+}
+
+footer .box ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer .box ul li a {
+  margin-left: .5rem;
+  color: var(--pure);
+  text-decoration: none;
+  transition: all .3s ease;
+  font-size: 13px;
+
+}
+
+footer .box ul li a:hover {
+  color: var(--primary);
+}
+
+footer .box:nth-child(3)>div {
+  display: flex;
+  justify-content: left;
+}
+
+footer .box:nth-child(3) li {
+  text-align: left;
+}
+
+footer .box:nth-child(3) h3 {
+  text-align: left;
+}
+
+
+/* ##################################### COPYRIGHT FOOTER ################################### */
+
+footer.copyright div {
+  margin-top: -1rem;
+  margin-bottom: 0;
+  color: var(--pure);
+  text-align: center;
+  background: var(--secondary);
+  padding: .5rem 0;
+  font-size: 12px;
+}
+
+footer.copyright div a {
+  text-decoration: none;
+  color: var(--primary);
+  font-family: "raleway-bold";
+}
+
+
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  RESPONSIVE FOR MOBILE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+
+
+.nav-background .mobile-logo {
+  padding: 1rem;
+}
+
+.nav-background .mobile-nav {
+  padding: 1rem;
+}
+
+.nav-background .mobile-nav ul {
+  list-style-type: none;
+}
+
+.nav-background .mobile-nav ul li {
+  margin-bottom: 1rem;
+}
+
+.nav-background .mobile-nav ul li a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: "raleway-medium";
+}
+
+.nav-background .mobile-nav ul li a:hover {
+  color: var(--primary);
+}
+
+.nav-background .contact {
+  padding: 1rem;
+  padding-left: 0;
+}
+
+.nav-background .time {
+  padding: 1rem;
+  /* padding-left: 0; */
+}
+
+.nav-background .contact img,
+.nav-background .time img {
+  margin-right: .7rem;
+}
+
+.nav-background .contact h5,
+.nav-background .time h5 {
+  font-family: "raleway-bold";
+  margin-bottom: .25rem;
+  font-size: 1rem;
+}
+
+.nav-background .contact h6,
+.nav-background .time h6 {
+  font-size: .75rem;
+  font-family: "raleway-semi-bold";
+}
+
+.nav-background .cart {
+  margin-bottom: 2rem;
+}
+
+.nav-background .cart a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-family: "raleway-bold";
+}
+
+.nav-background .cart img {
+  margin-right: .75rem;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* RESPONSIVE FOR SCREEN LESS THAN 992PX */
+
+
+@media (max-width: 992px) {
+  .nav-trigger {
+    display: block;
+  }
+
+  header.topbar,
+  nav {
+    display: none;
+  }
+
+  header.hero {
+    top: -4rem;
+  }
+
+  header.hero .hero-image {
+    right: -40px;
+    top: 15px;
+  }
+
+  .top-products .slider-btn {
+    display: none !important;
+  }
+
+  .latest-news .article-wrapper {
+    flex-direction: column;
+  }
+
+  .latest-news .article-wrapper .card {
+    /* margin-right: 0; */
+    margin-bottom: 4rem;
+  }
+
+  footer .instgram-api .post-wrap>div {
+    width: calc(1/2*100% - (1-1/3)*5px);
+  }
+}
+
+/* ########################################################################### */
+
+
+/* RESPONSIVE FOR SCREEN LESS THAN 768PX */
+
+@media (max-width:768px) {
+
+
+  .container {
+    padding-right: 30px;
+    width: 720px;
+  }
+
+
+  header.hero .hero-image {
+    right: -125px;
+    top: 60px;
+  }
+
+  header.hero .hero-image img {
+    width: 60%;
+  }
+
+  .about-meal .about-meal-wrap {
+    flex-direction: column;
+  }
+
+  .about-meal .about-meal-wrap img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  section.our-services .card-wrapper {
+    flex-direction: column;
+  }
+
+  section.our-services .card-wrapper .service-card {
+    margin-bottom: 6rem;
+  }
+
+  section.latest-news .article-wrapper {
+    margin-right: -1.5rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .box {
+    text-align: left;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  footer .box:nth-child(3) h3 {
+    text-align: left;
+  }
+
+}
+
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* RESPONSIVE FOR SCREEN LESS THAN 576PX */
+@media (max-width:576px) {
+
+  .container {
+    width: 84%;
+  }
+
+  header.hero .hero-image {
+    right: -235px;
+  }
+
+  header.hero .hero-image {
+    right: -235px;
+    top: 100px;
+  }
+
+  header.hero .hero-image img {
+    width: 72%;
+    right: -235px;
+    top: 100px;
+    display: none;
+  }
+
+  .top-products .container {
+   margin-left: 1.2rem;
+  }
+
+  section.our-services .card-wrapper {
+    flex-direction: column;
+    margin-right: -.8rem;
+  }
+
+  section.big-deal .timer {
+    margin-right: 0;
+    padding: 0 .4rem;
+  }
+
+  section.big-deal .timer div {
+    margin-right: 0.5rem;
+  }
+
+  section.subscribe .container {
+    flex-direction: column;
+  }
+
+  section.subscribe .container>div:last-child {
+    /* flex: 1; */
+    padding-right: 3rem;
+    margin-top: 2rem;
+  }
+
+  .slick-track {
+    width: 100%;
+  }
+
+  .section-heading::after {
+    /* content: '';
+    display: block; */
+    width: 90%;
+    /* height: 30px;
+    background: url(../ic/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: -10px; */
+  }
+
+  section.contact-us {
+    /* padding-top: 0;
+    padding-bottom: 0; */
+    flex-direction: column;
+
+
+  }
+
+  section.contact-us .contact-info {
+    display: flex;
+    justify-content: left;
+    padding-left: 2rem;
+  }
+
+  .contact-us .map {
+    margin-bottom: 3rem;
+  }
+
+  section.our-services .service-card {
+    /* background: var(--heaven);
+    text-align: center;
+    padding: 2rem;
+    padding-top: 4rem;
+    position: relative;
+    border-radius: 4px; */
+    margin-right: 1rem;
+  }
+
+  .flex-1 {
+    /* flex: 1; */
+    padding-right: 3rem;
+  }
+
+  /* footer .instagram-api .post-wrap {
+    
+    width: 90%;
+  } */
+
+}
